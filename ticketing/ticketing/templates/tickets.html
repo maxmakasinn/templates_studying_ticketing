@@ -6,5 +6,11 @@
 </head>
 <body>
     View a ticket!
-</body>
+    Tickets:
+    {% for ticket in tickets %}
+        <p>
+        {{ ticket.submitter }} buy a ticket {{ ticket.body }} at {{ ticket.created_at}}
+        </p>
+    {% endfor %}
+<body>
 </html>
