@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from ticketing.models import Ticket
 
 
 def index(request):
@@ -6,8 +7,11 @@ def index(request):
 
 
 def submit(request):
+    new_ticket = Ticket(submitter="Test User", body="Help, I need help with bug!!!")
+    new_ticket.save()
     return render(request, "submit.html")
 
 
 def tickets(request):
-    return render(request, "tickets.html")
+    all_tickets = Ticket.objects.all()
+    return render(request, "tickets.html", {"tickets": all_tickets})
