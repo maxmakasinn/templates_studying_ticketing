@@ -6,5 +6,13 @@
 </head>
 <body>
     Submit a ticket!
+    <form action="/submit" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="username">
+        </br>
+        <textarea placeholder="Body" name="body"></textarea>
+        </br>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
