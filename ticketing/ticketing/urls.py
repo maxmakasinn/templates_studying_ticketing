@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
     path("submit", views.submit, name="submit"),
-    path("ticket", views.tickets, name="tickets"),
+    path("tickets", views.tickets, name="tickets"),
+    path("ticket/<int:ticket_id>", views.ticket, name="ticket"),
 ]

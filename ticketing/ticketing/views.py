@@ -21,3 +21,8 @@ def submit(request):
 def tickets(request):
     all_tickets = Ticket.objects.all()
     return render(request, "tickets.html", {"tickets": all_tickets})
+
+
+def ticket(request, ticket_id):
+    selected_ticket = Ticket.objects.get(pk=ticket_id)
+    return render(request, "ticket.html", {"ticket": selected_ticket})
