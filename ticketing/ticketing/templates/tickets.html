@@ -11,6 +11,7 @@
         <p>
         {{ ticket.submitter }} buy a ticket {{ ticket.body }} at {{ ticket.created_at}}
         </p>
+        <a href="{% url 'ticket' ticket.pk %}">View this ticket</a>
     {% endfor %}
 <body>
 </html>
