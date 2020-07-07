@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 
 from ticketing.models import Ticket
@@ -17,6 +17,10 @@ def submit(request):
         return HttpResponse("Successfully submitted ticket!")
     return render(request, "submit.html")
 
+
+def tickets_raw(request):
+    all_tickets = list(Ticket.objects.values())
+    return JsonResponse(all_tickets, safe=False)
 
 def tickets(request):
     all_tickets = Ticket.objects.all()
