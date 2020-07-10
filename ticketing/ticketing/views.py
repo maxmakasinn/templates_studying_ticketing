@@ -22,6 +22,7 @@ def tickets_raw(request):
     all_tickets = list(Ticket.objects.values())
     return JsonResponse(all_tickets, safe=False)
 
+
 def tickets(request):
     all_tickets = Ticket.objects.all()
     return render(request, "tickets.html", {"tickets": all_tickets})
