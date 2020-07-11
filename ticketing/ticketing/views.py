@@ -8,6 +8,10 @@ def index(request):
     return render(request, "home.html")
 
 
+def showlayout(request):
+    return render(request, "applayout.html")
+
+
 def submit(request):
     if request.method == "POST":
         username = request.POST.get("username")

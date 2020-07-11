@@ -19,11 +19,12 @@ from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', views.index, name="home"),
-    # path("submit", views.submit, name="submit"),
-    # path("tickets", views.tickets, name="tickets"),
-    # path("ticket/<int:ticket_id>", views.ticket, name="ticket"),
+    path('layout', views.showlayout, name="layout"),
+    path("submit", views.submit, name="submit"),
+    path("tickets", views.tickets, name="tickets"),
+    path("ticket/<int:ticket_id>", views.ticket, name="ticket"),
     path('api/tickets', views.tickets_raw),
     re_path('spa', TemplateView.as_view(template_name="index.html"))
 ]
