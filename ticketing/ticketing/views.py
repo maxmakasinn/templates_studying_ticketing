@@ -5,7 +5,7 @@ from ticketing.models import Ticket
 
 
 def index(request):
-    return render(request, "index.html")
+    return render(request, "home.html")
 
 
 def submit(request):
