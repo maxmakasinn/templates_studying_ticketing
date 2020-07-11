@@ -1,5 +1,5 @@
 {% extends "applayout.html" %}
-
+{% load mytags %}
 {% block title %}
     Tickets
 {% endblock %}
@@ -11,7 +11,7 @@
                 <h4>Ticket {{ticket.pk}}</h4>
                 <div class="info">
                     Submitted by <strong>{{ ticket.submitter }}</strong>
-                    on <strong>{{ ticket.created_at}}</strong>
+                    on <strong>{{ ticket.created_at|my_date:True }}</strong>
                 </div>
                 <h4>Description:</h4>
                 <div class="body">
